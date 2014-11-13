@@ -6,3 +6,13 @@ Note: you will need to use pandas package. Also, you must use encoding = 'latin1
 For example,
 df = pd.read_csv(filename, encoding='latin1')
  where pd is the short form use of pandas (e.g., import pandas as pd) and df is a variable of type dataframe.
+
+import pandas as pd
+
+url = 'https://raw.githubusercontent.com/MIS407/Data_Analysis/master/Data/Bikeshare_train.csv'
+bikeShareInfo = pd.read_csv(url, encoding='latin1')
+
+print('Printing days with high winds')
+
+bikeShareQuery = bikeShareInfo.query('windspeed >= 15')
+print(bikeShareQuery)
